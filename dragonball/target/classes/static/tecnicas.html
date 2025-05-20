@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dragon Ball Z - Gestión de Técnicas</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+body {
+background-image: url('../static/images/kame.jpg');
+background-size: cover;
+background-position: center;
+}
+
+/* Estilo para la imagen de la técnica */
+.tecnica-imagen {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.tecnica-img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 2px solid var(--color-primary);
+}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="logo">
+<img src="images/Dragon_Ball_Z_logo.svg.png" alt="Dragon Ball Z Logo">
+</div>
+<h1>Gestión de Técnicas Dragon Ball Z</h1>
+</div>
+
+<div class="nav-container">
+<nav class="main-nav">
+<ul>
+<li><a href="index.html">Personajes</a></li>
+<li><a href="tecnicas.html" class="active">Técnicas</a></li>
+<li><a href="sagas.html">Sagas</a></li>
+</ul>
+</nav>
+</div>
+
+<div class="content-container">
+<div class="search-section">
+<h2>Buscar Técnicas</h2>
+<div class="search-form">
+<div class="form-group">
+<label for="nombreTecnica">Nombre:</label>
+<input type="text" id="nombreTecnica" name="nombreTecnica" placeholder="Nombre de la técnica">
+</div>
+<div class="button-group">
+<button id="btnBuscarTecnica" class="btn btn-search">Buscar</button>
+<button id="btnCrearTecnica" class="btn btn-create">Crear Técnica</button>
+</div>
+</div>
+</div>
+
+<div class="results-section">
+<h2 class="tecnicas-title">Técnicas de Combate</h2>
+<div class="grid-container" id="contenedorTecnicas">
+<!-- Las técnicas se cargarán aquí dinámicamente -->
+</div>
+</div>
+</div>
+
+<!-- Modal para crear/editar técnicas -->
+<div id="modalTecnica" class="modal">
+<div class="modal-content">
+<span class="modal-close">&times;</span>
+<h2 id="modalTituloTecnica">Crear Técnica</h2>
+<form id="formTecnica">
+<input type="hidden" id="tecnicaId">
+
+<div class="form-group">
+<label for="inputNombreTecnica">Nombre:</label>
+<input type="text" id="inputNombreTecnica" name="nombre" required>
+</div>
+
+<div class="form-group">
+<label for="inputDescripcionTecnica">Descripción:</label>
+<textarea id="inputDescripcionTecnica" name="descripcion" rows="4" required></textarea>
+</div>
+
+<div class="form-group">
+<label for="inputNivelDano">Nivel de Daño (1-100):</label>
+<input type="number" id="inputNivelDano" name="nivelDano" min="1" max="100" required>
+</div>
+
+<!-- Nuevo campo para la URL de la imagen -->
+<div class="form-group">
+<label for="inputImagenUrlTecnica">URL de Imagen: <small>(URL completa de internet o nombre del archivo local)</small></label>
+<input type="text" id="inputImagenUrlTecnica" name="imagenUrl" placeholder="URL de imagen o nombre de archivo">
+</div>
+
+<div class="form-buttons">
+<button type="submit" class="btn btn-save">Guardar</button>
+<button type="button" class="btn btn-cancel" id="btnCancelarTecnica">Cancelar</button>
+</div>
+</form>
+</div>
+</div>
+
+<footer class="footer">
+<p>&copy; 2025 Dragon Ball Z Database - Proyecto de Acceso a Datos con JDBC</p>
+</footer>
+
+<script src="js/tecnicas.js"></script>
+</body>
+</html>

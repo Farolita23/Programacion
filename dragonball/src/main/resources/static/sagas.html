@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball Z - Gestión de Sagas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            background-image: url('../static/images/fury_shenron-1920x1080.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="images/Dragon_Ball_Z_logo.svg.png" alt="Dragon Ball Z Logo">
+        </div>
+        <h1>Gestión de Sagas Dragon Ball Z</h1>
+    </div>
+
+    <div class="nav-container">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Personajes</a></li>
+                <li><a href="tecnicas.html">Técnicas</a></li>
+                <li><a href="sagas.html" class="active">Sagas</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="content-container">
+        <div class="search-section">
+            <h2>Buscar Sagas</h2>
+            <div class="search-form">
+                <div class="form-group">
+                    <label for="nombreSaga">Nombre:</label>
+                    <input type="text" id="nombreSaga" name="nombreSaga" placeholder="Nombre de la saga">
+                </div>
+                <div class="button-group">
+                    <button id="btnBuscarSaga" class="btn btn-search">Buscar</button>
+                    <button id="btnCrearSaga" class="btn btn-create">Crear Saga</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-section">
+            <h2 class="sagas-title">Sagas del Universo Dragon Ball Z</h2>
+            <div class="grid-container" id="contenedorSagas">
+                <!-- Las sagas se cargarán aquí dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para crear/editar sagas -->
+    <div id="modalSaga" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 id="modalTituloSaga">Crear Saga</h2>
+            <form id="formSaga">
+                <input type="hidden" id="sagaId">
+                
+                <div class="form-group">
+                    <label for="inputNombreSaga">Nombre:</label>
+                    <input type="text" id="inputNombreSaga" name="nombre" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="inputDescripcionSaga">Descripción:</label>
+                    <textarea id="inputDescripcionSaga" name="descripcion" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="inputAnoLanzamiento">Año de Lanzamiento:</label>
+                    <input type="number" id="inputAnoLanzamiento" name="anoLanzamiento" min="1980" max="2030" required>
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-save">Guardar</button>
+                    <button type="button" class="btn btn-cancel" id="btnCancelarSaga">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Dragon Ball Z Database - Proyecto de Acceso a Datos con JDBC</p>
+    </footer>
+
+    <script src="js/sagas.js"></script>
+</body>
+</html>
