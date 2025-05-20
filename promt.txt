@@ -1,0 +1,1 @@
+Actualmente el proyecto tiene esta estructura de base de datos, quiero que modifiques el proyecto pueda interactuar con las otras tablas, de forma que contenga acciones de One-to-One.  One-to-Many.  Many-to-Many, adicionalmente quiero que añadas la tabla planetas, dame las instrucciones de lo que tengo que hacer
